@@ -29,7 +29,10 @@ const BaseContainer = ({ children, showWelcomeBanner, fullName }) => {
           {showWelcomeBanner ? <AuthLargeLayout fullName={fullName} /> : <ImageLargeLayout />}
         </MediaQuery>
         <div className={classNames('content', { 'align-items-center mt-0': showWelcomeBanner })}>
-          {children}
+          {/* SOLUCIÓN: Contenedor Flexbox para centrar perfectamente el formulario */}
+          <div className="d-flex w-100 min-vh-100 justify-content-center align-items-center">
+            {children}
+          </div>
         </div>
       </div>
     );
@@ -37,7 +40,7 @@ const BaseContainer = ({ children, showWelcomeBanner, fullName }) => {
 
   return (
     <>
-      <div className="col-md-12 extra-large-screen-top-stripe" />
+      <div className="extra-large-screen-top-stripe position-absolute w-100 p-0" style={{ top: 0, left: 0, zIndex: 1050 }} />
       <div className="layout">
         <MediaQuery maxWidth={breakpoints.small.maxWidth - 1}>
           {showWelcomeBanner ? <AuthSmallLayout fullName={fullName} /> : <DefaultSmallLayout />}
@@ -49,7 +52,10 @@ const BaseContainer = ({ children, showWelcomeBanner, fullName }) => {
           {showWelcomeBanner ? <AuthLargeLayout fullName={fullName} /> : <DefaultLargeLayout />}
         </MediaQuery>
         <div className={classNames('content', { 'align-items-center mt-0': showWelcomeBanner })}>
-          {children}
+          {/* SOLUCIÓN: Contenedor Flexbox para centrar perfectamente el formulario */}
+          <div className="d-flex w-100 min-vh-30 justify-content-center align-items-center">
+            {children}
+          </div>
         </div>
       </div>
     </>

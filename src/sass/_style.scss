@@ -30,6 +30,7 @@ $elevation-level-2-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.15);
 .forgot-password-button-width {
   min-width: 6rem;
 }
+
 .spinner--position-centered {
   left: 0;
   right: 0;
@@ -109,7 +110,7 @@ $elevation-level-2-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.15);
   height: 36px;
   color: var(--pgn-color-primary-base);
 
-  .btn-tpa__image-icon{
+  .btn-tpa__image-icon {
     background-color: transparent;
     max-height: 24px;
     max-width: 24px;
@@ -292,11 +293,13 @@ select.form-control {
   font-size: var(--pgn-typography-font-size-xs) !important;
   filter: drop-shadow($elevation-level-2-shadow) drop-shadow($elevation-level-2-shadow) !important;
   right: 0.2rem !important;
+
   .tooltip-inner {
     background: var(--pgn-color-white);
     display: block;
     color: var(--pgn-color-gray-500);
   }
+
   .arrow::before {
     border-left-color: var(--pgn-color-white);
   }
@@ -317,6 +320,7 @@ select.form-control {
     display: block;
     color: var(--pgn-color-gray-500);
   }
+
   .arrow::before {
     border-top-color: var(--pgn-color-white);
   }
@@ -335,7 +339,7 @@ select.form-control {
   color: var(--pgn-color-gray-700);
 }
 
-.logistration-button:hover{
+.logistration-button:hover {
   color: var(--pgn-color-gray-700);
   text-decoration: none;
 }
@@ -350,6 +354,7 @@ select.form-control {
 .icon-size {
   width: 2.3rem;
 }
+
 .has-floating-label {
   color: var(--pgn-color-gray-500);
 }
@@ -363,13 +368,12 @@ select.form-control {
   font-size: 0.75rem;
 }
 
-.form-group__form-field .form-control:focus ~ .pgn__form-control-floating-label .pgn__form-control-floating-label-content {
-    font-size: 16px;
-    color: var(--pgn-color-primary-700);
+.form-group__form-field .form-control:focus~.pgn__form-control-floating-label .pgn__form-control-floating-label-content {
+  font-size: 16px;
+  color: var(--pgn-color-primary-700);
 }
 
-.form-group__form-field .form-control:not([value='']):not(:focus) ~
-  .pgn__form-control-floating-label .pgn__form-control-floating-label-content {
+.form-group__form-field .form-control:not([value='']):not(:focus)~.pgn__form-control-floating-label .pgn__form-control-floating-label-content {
   font-size: 16px;
 }
 
@@ -435,6 +439,7 @@ select.form-control {
 
   #password-requirement-top {
     display: unset;
+
     .tooltip-inner {
       max-width: inherit;
       min-width: unset !important;
@@ -456,3 +461,76 @@ select.form-control {
 .pgn__form-control-decorator-trailing {
   right: 0 !important;
 }
+
+// ===========================
+// FICCT Custom Theme
+// ===========================
+:root {
+  // Azul marino oscuro (fondo escudo)
+  --pgn-color-primary-base: #1a3a6b;
+  --pgn-color-primary-300: #2a4d8f;
+  --pgn-color-primary-400: #1a3a6b;
+  --pgn-color-primary-500: #142d54;
+  --pgn-color-primary-700: #0d1e38;
+
+  // Rojo (átomo)
+  --pgn-color-brand-base: #cc0000;
+  --pgn-color-brand-700: #990000;
+
+  // Dorado (estrellas)
+  --pgn-color-accent-a: #f5c518;
+  --pgn-color-accent-b: #f5c518;
+
+  --pgn-color-focus: transparent !important;
+  --pgn-shadow-focus-ring: none !important;
+  --pgn-color-nav-tabs-base-link-focus-border: transparent !important;
+}
+
+// Botón Sign in - rojo FICCT
+.btn-brand {
+  background-color: #cc0000 !important;
+  border-color: #cc0000 !important;
+  color: #ffffff !important;
+
+  &:hover,
+  &:focus {
+    background-color: #990000 !important;
+    border-color: #990000 !important;
+  }
+}
+
+// Tab activo
+.nav-tabs .nav-link.active {
+  border-bottom-color: #cc0000 !important;
+  color: #1a3a6b !important;
+  font-weight: 700 !important;
+}
+
+
+// Inputs focus
+.form-control:focus {
+  border-color: #1a3a6b !important;
+  box-shadow: 0 0 0 0.2rem rgba(26, 58, 107, 0.25) !important;
+}
+
+// Label flotante focus
+.form-group__form-field .form-control:focus~.pgn__form-control-floating-label .pgn__form-control-floating-label-content {
+  color: #1a3a6b !important;
+}
+
+// Barra superior con 3 colores del escudo
+.small-screen-top-stripe,
+.medium-screen-top-stripe,
+.extra-large-screen-top-stripe {
+  background-image: linear-gradient(102.02deg,
+      #1a3a6b 33%,
+      #cc0000 33%,
+      #cc0000 66%,
+      #f5c518 66%) !important;
+}
+
+// Enlace forgot password
+#forgot-password {
+  color: #1a3a6b !important;
+}
+

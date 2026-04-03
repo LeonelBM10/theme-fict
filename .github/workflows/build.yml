@@ -17,9 +17,16 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      - name: Clone Tutor MFE build context
+        run: |
+          git clone https://github.com/overhangio/tutor-mfe.git
+          cp -r . tutor-mfe/tutormfe/plugin/apps/mfe/build/mfe/authn-src/
+
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: tutor-mfe/tutormfe/plugin/apps/mfe/build/mfe
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/ficct-authn:latest
+          build-contexts: |
+            authn-src=.
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/openedx-mfe:21.0.0-indigo

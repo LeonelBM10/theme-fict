@@ -1,5 +1,5 @@
-:80 {
-    root * /srv
-    try_files {path} /index.html
+:8002 {
+    root * /openedx/dist
+    try_files {path} /authn/index.html
     file_server
 }
